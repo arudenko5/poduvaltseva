@@ -1,9 +1,10 @@
 'use strict';
 
-var autoprefixer = require('autoprefixer'),
+var gulp = require('gulp'),
+    watch= require('gulp-watch'),
+    autoprefixer = require('autoprefixer'),
     rename = require('gulp-rename'),
     cssnano = require('cssnano'),
-    gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps'),
     precss = require('precss');
@@ -12,13 +13,13 @@ var autoprefixer = require('autoprefixer'),
 
 var path = {
     src: {
-        styles: './css/style.css'
+        styles: './source/css/style.css'
     },
     build: {
-        styles: './'
+        styles: './css/'
     },
     watch: {
-        styles: './css/**/*.css'
+        styles: './source/css/**/*.css'
     }
 };
 
@@ -31,4 +32,11 @@ gulp.task('buildStyles', function () {
         .pipe(rename("style.min.css"))
         .pipe( sourcemaps.write('.') )
         .pipe(gulp.dest(path.build.styles));
+});
+
+
+gulp.task('watch', function(){
+    watch([path.watch.styles], function(event, cb) {
+        gulp.start('buildStyles');
+    });
 });

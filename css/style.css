@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i&subset=cyrillic');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+html, body {
+    width: 100%
+}
+body {
+    font-family: 'Open Sans',sans-serif;
+    background-color: #fff
+}
+img {
+    border: 0
+}
+ul, li {
+    list-style: none
+}
+button, input, textarea {
+    border: none;
+    outline: none
+}
+.cols {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 0
+}
+.col {
+    font-size: 16px;
+    min-height: 1px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    zoom: 1;
+    display: inline;
+    height: 1px
+}
