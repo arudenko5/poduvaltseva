@@ -1,0 +1,17 @@
+.cols {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  font-size: 0;
+}
+.col{
+  font-size: $font_size;
+  min-height: 1px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  zoom: 1;
+  *display: inline;
+  _height: 1px;
+}
