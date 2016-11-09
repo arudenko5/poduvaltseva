@@ -25,3 +25,16 @@ button, input, textarea {
     border: none;
     outline: none;
 }
+.page{
+  &-wrapper{
+    height: 100%;
+  }
+  &-block{
+    width: 100%;
+    margin: 0 auto;
+    max-width: $width_max;
+    &__inner{
+
+    }
+  }
+}

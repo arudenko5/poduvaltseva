@@ -1,4 +1,11 @@
 $font_playfair: 'Playfair Display', serif;
 $font_opensans: 'Open Sans', sans-serif;
-
 $font_size: 16px;
+
+$width_max: 1920px;
+
+/*workarea widths*/
+$width_workarea_desctop: 1200px;
+$width_workarea_desctop_small: 1024px;
+$width_workarea_tablet: 768px;
+
