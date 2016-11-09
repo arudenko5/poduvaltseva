@@ -1,0 +1,1 @@
+{"version":3,"sources":["variables.css","base.css"],"names":[],"mappings":"AAAA,SACI,UAAY,CAIf,AAHC,WACE,cAAgB,CACjB,ACFH,EACI,UAAW,AACX,QAAU,CACb","file":"style.min.css","sourcesContent":[".testvar{\r\n    color: #000;\r\n  a{\r\n    font-size: 14px;\r\n  }\r\n}","@import url('variables.css');\r\n\r\n*{\r\n    padding: 0;\r\n    margin: 0;\r\n}"]}
