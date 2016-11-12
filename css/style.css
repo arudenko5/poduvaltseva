@@ -1,40 +1,64 @@
+/*workarea widths*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i&subset=cyrillic');
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box
 }
-html, body {
+html, body{
     width: 100%
 }
-body {
+body{
     font-family: 'Open Sans',sans-serif;
     background-color: #fff
 }
-img {
+img{
     border: 0
 }
-ul, li {
+ul, li{
     list-style: none
 }
-button, input, textarea {
+button, input, textarea{
     border: none;
     outline: none
 }
-.cols {
+.page{
+}
+.page-wrapper{
+    height: 100%
+}
+/* helpers */
+.h{
+}
+.h-page{
+}
+.h-page-block{
+    width: 100%
+}
+.h-page-block__inner{
+    margin: 0 auto
+}
+.cols{
     width: 100%;
     position: relative;
     text-align: center;
     font-size: 0
 }
-.col {
+.col{
     font-size: 16px;
     min-height: 1px;
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
     position: relative;
-    zoom: 1;
-    display: inline;
     height: 1px
+}
+/*HEADER*/
+.page-header{
+}
+.page-header__logo{
+    width: 50%
+}
+.page-header__menu{
+    width: 50%
 }
