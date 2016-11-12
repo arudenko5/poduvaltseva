@@ -37,7 +37,7 @@ button, input, textarea {
       width: 100%;
       &__inner{
         margin: 0 auto;
-
+        max-width:$width_workarea_desctop;
       }
     }
   }

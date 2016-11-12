@@ -36,7 +36,8 @@ button, input, textarea{
     width: 100%
 }
 .h-page-block__inner{
-    margin: 0 auto
+    margin: 0 auto;
+    max-width: 1200px
 }
 .cols{
     width: 100%;
@@ -50,8 +51,7 @@ button, input, textarea{
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
-    position: relative;
-    height: 1px
+    position: relative
 }
 /*HEADER*/
 .page-header{
