@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
     watch= require('gulp-watch'),
+    sass = require('gulp-sass'),
     autoprefixer = require('autoprefixer'),
     rename = require('gulp-rename'),
     cssnano = require('cssnano'),
@@ -23,25 +24,27 @@ var config = {
 
 var path = {
     src: {
-        styles: './source/css/style.css'
+        styles: './source/scss/style.scss'
     },
     build: {
         styles: './css/'
     },
     watch: {
-        styles: './source/css/**/*.css'
+        styles: './source/scss/**/*.scss'
     }
 };
 
 gulp.task('buildStyles', function () {
     gulp.src(path.src.styles)
+        .pipe( sass() )
         .pipe( sourcemaps.init() )
-        .pipe(postcss([ precss(), autoprefixer({ browsers: ['last 2 versions'] }) ]))
+        .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
         .pipe(gulp.dest(path.build.styles))
         .pipe(postcss([cssnano()]))
         .pipe(rename("style.min.css"))
         .pipe( sourcemaps.write('.') )
-        .pipe(gulp.dest(path.build.styles));
+        .pipe(gulp.dest(path.build.styles))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('build', ['buildStyles']);

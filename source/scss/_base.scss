@@ -1,5 +1,5 @@
-@import url('_variables.css');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i&subset=cyrillic');
+@import '_mixins.scss';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i&subset=cyrillic';
 *{
     padding: 0;
     margin: 0;
@@ -37,7 +37,16 @@ button, input, textarea {
       width: 100%;
       &__inner{
         margin: 0 auto;
-        max-width:$width_workarea_desctop;
+        border: 1px solid black;
+        @include break(xs) {
+          width: 85%;
+        }
+        @include break(lg) {
+          width: 960px;
+        }
+        @include break(xl) {
+          width: 1200px;
+        }
       }
     }
   }

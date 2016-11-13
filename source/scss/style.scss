@@ -1,0 +1,16 @@
+@import '_base.scss';
+@import '_grid.scss';
+/*HEADER*/
+.page-header{
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  color: #ffffff;
+  &__logo{
+     width: 50%;
+  }
+  &__menu{
+    width: 50%;
+  }
+}
