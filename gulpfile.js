@@ -7,9 +7,19 @@ var gulp = require('gulp'),
     cssnano = require('cssnano'),
     postcss = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps'),
-    precss = require('precss');
-/**TODO:
- *  вотчер и лайфврелоад*/
+    precss = require('precss'),
+    browserSync = require("browser-sync"),  // локальный сервер + работа с браузером
+    reload = browserSync.reload; // обновление страницы в браузере
+
+var config = {
+    server: {
+        baseDir: "./"
+    },
+    tunnel: false,
+    host: 'localhost',
+    port: 9000,
+    logPrefix: "poduvaltseva"
+};
 
 var path = {
     src: {
@@ -34,6 +44,13 @@ gulp.task('buildStyles', function () {
         .pipe(gulp.dest(path.build.styles));
 });
 
+gulp.task('build', ['buildStyles']);
+
+gulp.task('webServer', function () {
+    browserSync(config);
+});
+
+gulp.task('default', ['build', 'webServer', 'watch']);
 
 gulp.task('watch', function(){
     watch([path.watch.styles], function(event, cb) {
