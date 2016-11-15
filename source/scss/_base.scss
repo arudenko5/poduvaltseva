@@ -25,6 +25,9 @@ button, input, textarea {
     border: none;
     outline: none;
 }
+.secret-svg{
+  display: none;
+}
 .page{
   &-wrapper{
     height: 100%;

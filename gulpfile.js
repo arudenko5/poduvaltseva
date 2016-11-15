@@ -9,6 +9,9 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps'),
     precss = require('precss'),
+    svgmin = require('gulp-svgmin'),
+    svgstore = require('gulp-svgstore'),
+    path = require('path'),
     browserSync = require("browser-sync"),  // локальный сервер + работа с браузером
     reload = browserSync.reload; // обновление страницы в браузере
 
@@ -22,28 +25,48 @@ var config = {
     logPrefix: "poduvaltseva"
 };
 
-var path = {
+var pathes = {
     src: {
-        styles: './source/scss/style.scss'
+        styles: './source/scss/style.scss',
+        svg: './source/svg/*.svg'
     },
     build: {
-        styles: './css/'
+        styles: './css/',
+        svg: './svg/'
     },
     watch: {
         styles: './source/scss/**/*.scss'
     }
 };
 
+gulp.task('buildSvg', function () {
+    return gulp
+        .src(pathes.src.svg)
+        .pipe(svgmin(function (file) {
+            var prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: prefix + '-',
+                        minify: true
+                    }
+                }]
+            }
+        }))
+        .pipe(svgstore())
+        .pipe(gulp.dest(pathes.build.svg));
+});
+
 gulp.task('buildStyles', function () {
-    gulp.src(path.src.styles)
+    gulp.src(pathes.src.styles)
         .pipe( sass() )
         .pipe( sourcemaps.init() )
         .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-        .pipe(gulp.dest(path.build.styles))
+        .pipe(gulp.dest(pathes.build.styles))
         .pipe(postcss([cssnano()]))
         .pipe(rename("style.min.css"))
         .pipe( sourcemaps.write('.') )
-        .pipe(gulp.dest(path.build.styles))
+        .pipe(gulp.dest(pathes.build.styles))
         .pipe(reload({stream: true}));
 });
 
@@ -56,7 +79,7 @@ gulp.task('webServer', function () {
 gulp.task('default', ['build', 'webServer', 'watch']);
 
 gulp.task('watch', function(){
-    watch([path.watch.styles], function(event, cb) {
+    watch([pathes.watch.styles], function(event, cb) {
         gulp.start('buildStyles');
     });
 });
