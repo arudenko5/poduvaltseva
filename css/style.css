@@ -1,0 +1,147 @@
+/*workarea widths*/
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i&subset=cyrillic';
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff; }
+
+img {
+  border: 0; }
+
+ul,
+li {
+  list-style: none; }
+
+button, input, textarea {
+  border: none;
+  outline: none; }
+
+.secret-svg {
+  display: none; }
+
+.page-wrapper {
+  height: 100%; }
+
+/* helpers */
+.h-page-block {
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 50%; }
+  .h-page-block__inner, .page-header__inner {
+    margin: 0 auto;
+    border: 1px solid black; }
+    @media (min-width: 320px) {
+      .h-page-block__inner, .page-header__inner {
+        width: 85%; } }
+    @media (min-width: 1000px) {
+      .h-page-block__inner, .page-header__inner {
+        width: 960px; } }
+    @media (min-width: 1220px) {
+      .h-page-block__inner, .page-header__inner {
+        width: 1200px; } }
+
+.cols {
+  position: relative;
+  text-align: center;
+  font-size: 0; }
+
+.col {
+  font-size: 16px;
+  min-height: 1px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  position: relative; }
+
+/*HEADER*/
+.page-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  color: #ffffff;
+  height: 80px; }
+  .page-header__logo {
+    width: 50%;
+    text-align: left;
+    padding: 15px 0; }
+  .page-header__menu {
+    width: 50%; }
+
+.header-logo__link {
+  text-align: left;
+  color: #ffffff;
+  text-decoration: none; }
+  .header-logo__link:hover {
+    text-decoration: none; }
+
+.header-logo__symbol {
+  text-align: left;
+  font-size: 50px;
+  line-height: 1;
+  font-weight: 900;
+  font-family: "Playfair Display", serif; }
+
+.header-logo__text {
+  vertical-align: bottom;
+  padding-left: 7px; }
+
+.header-logo__title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: 3px;
+  text-transform: uppercase; }
+
+.header-logo__subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 18px;
+  text-transform: uppercase; }
+
+.header-nav__inner {
+  text-align: right; }
+
+.header-nav__item {
+  padding-left: 33px; }
+
+.header-nav__link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 80px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none; }
+  .header-nav__link:hover {
+    font-weight: 500;
+    color: #bdbdbd;
+    text-decoration: underline; }
+
+/* block 1 */
+.first-block {
+  padding-top: 80px;
+  height: 100%;
+  background-image: url("../img/block1_bg.jpg"); }
+  .first-block-content__title {
+    font-family: "Playfair Display", serif;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 80px;
+    text-align: center;
+    text-transform: uppercase; }
+  .first-block-content__subtitle {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-weight: 300;
+    font-size: 20px;
+    color: #ffffff; }
