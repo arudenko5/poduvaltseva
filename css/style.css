@@ -145,3 +145,66 @@ button, input, textarea {
     font-weight: 300;
     font-size: 20px;
     color: #ffffff; }
+  .first-block-scroll {
+    position: absolute;
+    width: 26px;
+    height: 42px;
+    bottom: 100px;
+    left: 50%;
+    margin-left: -13px; }
+    .first-block-scroll svg {
+      width: 25px;
+      height: 42px; }
+
+.second-block {
+  padding-top: 150px;
+  background-image: url("../img/block2_bg.jpg");
+  height: 700px; }
+  .second-block-content {
+    padding-left: 550px;
+    padding-right: 40px;
+    text-align: left; }
+    .second-block-content__title {
+      font-family: "Playfair Display", serif;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: 40px;
+      color: #000;
+      margin-bottom: 50px; }
+    .second-block-content__text {
+      font-family: "Open Sans", sans-serif;
+      font-weight: normal;
+      font-size: 16px;
+      color: #464646;
+      margin-bottom: 30px; }
+
+.third-block {
+  padding: 50px 0; }
+
+.services__title {
+  font-size: 45px;
+  font-family: "Playfair Display", serif;
+  color: #000;
+  text-align: center; }
+
+.services-list__item {
+  width: 50%; }
+
+.service__title {
+  font-size: 30px;
+  text-align: left;
+  font-weight: normal;
+  font-family: "Open Sans", sans-serif; }
+
+.service__description {
+  font-size: 16px;
+  color: #949494;
+  text-align: left; }
+
+.service__icon {
+  height: 110px;
+  width: 100px;
+  float: left; }
+  .service__icon svg {
+    max-height: 100%;
+    max-width: 100%; }
