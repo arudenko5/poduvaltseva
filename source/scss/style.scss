@@ -7,10 +7,96 @@
   right: 0;
   background-color: #000;
   color: #ffffff;
+  height:$height__header;
+  &__inner{
+    @extend .h-page-block__inner
+  }
   &__logo{
      width: 50%;
+    text-align: left;
+    padding: 15px 0;
   }
   &__menu{
     width: 50%;
+  }
+}
+.header-logo{
+  &__link{
+    text-align: left;
+    color: #ffffff;
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &__symbol{
+    text-align: left;
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 900;
+    font-family:$font_playfair;
+  }
+  &__text{
+    vertical-align: bottom;
+    padding-left: 7px;
+  }
+  &__title{
+    font-family:$font_opensans;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  &__subtitle{
+    font-family:$font_opensans;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+}
+.header-nav{
+  &__inner{
+    text-align: right;
+  }
+  &__item{
+    padding-left: 33px;
+  }
+  &__link{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: $height__header;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover{
+      font-weight: 500;
+      color: $color__gray;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* block 1 */
+.first-block {
+  padding-top: 80px;
+  height: 100%;
+  background-image: url('../img/block1_bg.jpg');
+  &-content{
+    &__title{
+      font-family:$font_playfair;
+      color: #ffffff;
+      font-weight: normal;
+      font-size: 80px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &__subtitle{
+      font-family:$font_opensans;
+      text-align: center;
+      font-weight: 300;
+      font-size: 20px;
+      color: #ffffff;
+    }
   }
 }

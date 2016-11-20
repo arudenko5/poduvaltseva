@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     svgstore = require('gulp-svgstore'),
     path = require('path'),
+    inject = require('gulp-inject'),
     browserSync = require("browser-sync"),  // локальный сервер + работа с браузером
     reload = browserSync.reload; // обновление страницы в браузере
 
@@ -27,20 +28,29 @@ var config = {
 
 var pathes = {
     src: {
+        html: './index.html',
         styles: './source/scss/style.scss',
         svg: './source/svg/*.svg'
     },
     build: {
+        html: './',
         styles: './css/',
         svg: './svg/'
     },
     watch: {
+        html: './index.html',
         styles: './source/scss/**/*.scss'
     }
 };
+gulp.task('buildHtml', function(){
+    return gulp
+        .src(pathes.src.html)
+        .pipe(reload({stream: true}));
+});
 
 gulp.task('buildSvg', function () {
-    return gulp
+
+    var svgs = gulp
         .src(pathes.src.svg)
         .pipe(svgmin(function (file) {
             var prefix = path.basename(file.relative, path.extname(file.relative));
@@ -53,8 +63,16 @@ gulp.task('buildSvg', function () {
                 }]
             }
         }))
-        .pipe(svgstore())
-        .pipe(gulp.dest(pathes.build.svg));
+        .pipe(svgstore({inlineSvg: true}));
+
+    function fileContents (filePath, file) {
+        return file.contents.toString();
+    }
+
+    return gulp
+        .src(pathes.src.html)
+        .pipe(inject(svgs, { transform: fileContents }))
+        .pipe(gulp.dest(pathes.build.html));
 });
 
 gulp.task('buildStyles', function () {
@@ -70,7 +88,7 @@ gulp.task('buildStyles', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('build', ['buildStyles']);
+gulp.task('build', ['buildStyles', 'buildSvg']);
 
 gulp.task('webServer', function () {
     browserSync(config);
@@ -81,5 +99,9 @@ gulp.task('default', ['build', 'webServer', 'watch']);
 gulp.task('watch', function(){
     watch([pathes.watch.styles], function(event, cb) {
         gulp.start('buildStyles');
+    });
+
+    watch([pathes.watch.html], function(event, cb) {
+        gulp.start('buildHtml');
     });
 });
