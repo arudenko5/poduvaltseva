@@ -183,12 +183,17 @@ button, input, textarea {
 
 .services__title {
   font-size: 45px;
+  font-weight: normal;
   font-family: "Playfair Display", serif;
   color: #000;
   text-align: center; }
 
 .services-list__item {
   width: 50%; }
+  .services-list__item:nth-of-type(even) {
+    padding-left: 70px; }
+  .services-list__item:nth-of-type(odd) {
+    padding-right: 70px; }
 
 .service__title {
   font-size: 30px;
@@ -204,7 +209,8 @@ button, input, textarea {
 .service__icon {
   height: 110px;
   width: 100px;
-  float: left; }
+  float: left;
+  margin-right: 45px; }
   .service__icon svg {
     max-height: 100%;
     max-width: 100%; }

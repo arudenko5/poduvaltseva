@@ -145,6 +145,7 @@
 .services{
   &__title{
     font-size: 45px;
+    font-weight: normal;
     font-family:$font_playfair;
     color: #000;
     text-align: center;
@@ -153,6 +154,12 @@
 .services-list{
   &__item{
     width: 50%;
+    &:nth-of-type(even){
+      padding-left: 70px;
+    }
+    &:nth-of-type(odd){
+      padding-right: 70px;
+    }
   }
 }
 .service{
@@ -171,6 +178,7 @@
     height: 110px;
     width: 100px;
     float: left;
+    margin-right: 45px;
     svg{
       max-height: 100%;
       max-width: 100%;
