@@ -13,6 +13,10 @@ var gulp = require('gulp'),
     svgstore = require('gulp-svgstore'),
     path = require('path'),
     inject = require('gulp-inject'),
+    gulpFilter = require('gulp-filter'),
+    mainBowerFiles = require('main-bower-files'),
+    gulpConcat = require('gulp-concat'),
+    gulpUglify = require('gulp-uglify'),
     browserSync = require("browser-sync"),  // локальный сервер + работа с браузером
     reload = browserSync.reload; // обновление страницы в браузере
 
@@ -30,21 +34,37 @@ var pathes = {
     src: {
         html: './index.html',
         styles: './source/scss/style.scss',
-        svg: './source/svg/*.svg'
+        svg: './source/svg/*.svg',
+        js: './source/js/*.js',
+        vendor: './source/vendor/'
     },
     build: {
         html: './',
         styles: './css/',
-        svg: './svg/'
+        svg: './svg/',
+        js: './js/'
     },
     watch: {
         html: './index.html',
-        styles: './source/scss/**/*.scss'
+        styles: './source/scss/**/*.scss',
+        js: './source/js/**/*.js'
+    },
+    bower: {
+        style: "source/vendor/",
+        js: "source/vendor/"
     }
 };
 gulp.task('buildHtml', function(){
     return gulp
         .src(pathes.src.html)
+        .pipe(reload({stream: true}));
+});
+
+gulp.task('buildScripts', function(){
+    return gulp
+        .src(pathes.src.js)
+        .pipe(gulpUglify())
+        .pipe(gulp.dest(pathes.build.js))
         .pipe(reload({stream: true}));
 });
 
@@ -88,7 +108,27 @@ gulp.task('buildStyles', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('build', ['buildStyles', 'buildSvg']);
+/**
+ * Сборка боверовских файлов в файлы-вендоры */
+gulp.task('bower', function(){
+
+    var jsFilter = gulpFilter('**/*.js',{restore: true});
+    var cssFilter = gulpFilter('**/*.css',{restore: true});
+
+    return gulp.src(mainBowerFiles())
+        .pipe(jsFilter)
+        .pipe(gulpUglify())
+        .pipe(gulpConcat("vendors.min.js"))
+        .pipe(gulp.dest(pathes.build.js))
+        .pipe(jsFilter.restore)
+        .pipe(cssFilter)
+        .pipe(gulpConcat("vendors.min.css"))
+        .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }), cssnano() ]))
+        .pipe(gulp.dest(pathes.build.styles))
+        .pipe(cssFilter.restore)
+});
+
+gulp.task('build', ['buildStyles', 'buildSvg', 'buildScripts', 'bower']);
 
 gulp.task('webServer', function () {
     browserSync(config);
@@ -103,5 +143,9 @@ gulp.task('watch', function(){
 
     watch([pathes.watch.html], function(event, cb) {
         gulp.start('buildHtml');
+    });
+
+    watch([pathes.watch.js], function(event, cb) {
+        gulp.start('buildScripts');
     });
 });

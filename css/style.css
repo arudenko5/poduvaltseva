@@ -69,7 +69,8 @@ button, input, textarea {
   right: 0;
   background-color: #000;
   color: #ffffff;
-  height: 80px; }
+  height: 80px;
+  z-index: 100; }
   .page-header__logo {
     width: 50%;
     text-align: left;
@@ -214,3 +215,30 @@ button, input, textarea {
   .service__icon svg {
     max-height: 100%;
     max-width: 100%; }
+
+.fourth-block {
+  padding: 50px 0; }
+
+.letters__title {
+  font-size: 45px;
+  font-weight: normal;
+  font-family: "Playfair Display", serif;
+  color: #000;
+  text-align: center; }
+
+.letters-slider {
+  padding: 45px 0; }
+
+.letter {
+  text-align: center;
+  margin: 0 auto;
+  width: 70%; }
+  .letter__link {
+    display: inline-block;
+    border: 7px solid #cccccc; }
+    .letter__link:hover {
+      border: 7px solid #dbd7d2; }
+  .letter__pic {
+    width: auto !important;
+    max-width: 100%;
+    max-height: 300px; }
