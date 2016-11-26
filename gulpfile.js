@@ -42,7 +42,8 @@ var pathes = {
         html: './',
         styles: './css/',
         svg: './svg/',
-        js: './js/'
+        js: './js/',
+        fonts: './fonts/'
     },
     watch: {
         html: './index.html',
@@ -114,6 +115,14 @@ gulp.task('bower', function(){
 
     var jsFilter = gulpFilter('**/*.js',{restore: true});
     var cssFilter = gulpFilter('**/*.css',{restore: true});
+    var fontsFilter = gulpFilter([
+        '**/*.otf',
+        '**/*.eot',
+        '**/*.svg',
+        '**/*.ttf',
+        '**/*.woff',
+        '**/*.woff2'
+    ],{restore: true});
 
     return gulp.src(mainBowerFiles())
         .pipe(jsFilter)
@@ -126,6 +135,9 @@ gulp.task('bower', function(){
         .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }), cssnano() ]))
         .pipe(gulp.dest(pathes.build.styles))
         .pipe(cssFilter.restore)
+        .pipe(fontsFilter)
+        .pipe(gulp.dest(pathes.build.fonts))
+        .pipe(fontsFilter.restore)
 });
 
 gulp.task('build', ['buildStyles', 'buildSvg', 'buildScripts', 'bower']);

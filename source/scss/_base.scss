@@ -41,6 +41,7 @@ button, input, textarea {
       width: 100%;
       background-size: cover;
       background-position: 50% 50%;
+      position: relative;
       &__inner{
         margin: 0 auto;
         border: 1px solid black;

@@ -35,7 +35,8 @@ button, input, textarea {
 .h-page-block {
   width: 100%;
   background-size: cover;
-  background-position: 50% 50%; }
+  background-position: 50% 50%;
+  position: relative; }
   .h-page-block__inner, .page-header__inner {
     margin: 0 auto;
     border: 1px solid black; }
@@ -242,3 +243,54 @@ button, input, textarea {
     width: auto !important;
     max-width: 100%;
     max-height: 300px; }
+
+.case {
+  height: 450px;
+  padding: 60px 45px 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .case__title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: left;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #fff; }
+  .case__description {
+    padding-top: 10px;
+    font-family: "Open Sans", sans-serif;
+    color: #FFFFFF;
+    font-size: 18px;
+    height: 240px; }
+  .case__subinfo {
+    font-family: "Open Sans", sans-serif;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1;
+    font-size: 16px; }
+
+.cases .owl-nav div {
+  position: absolute;
+  top: 50%;
+  margin-top: -23px;
+  background-color: #fff;
+  width: 45px;
+  height: 45px;
+  z-index: 1;
+  color: #464646;
+  text-align: center;
+  cursor: pointer; }
+  .cases .owl-nav div:hover .fa {
+    color: #464646; }
+  .cases .owl-nav div .fa {
+    color: #949494;
+    font-size: 24px;
+    line-height: 45px; }
+
+.cases .owl-prev {
+  left: 0; }
+
+.cases .owl-next {
+  right: 0; }
