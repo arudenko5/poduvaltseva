@@ -178,22 +178,29 @@ button, input, textarea {
 
 /* block 1 */
 .first-block {
+  position: relative;
   padding-top: 80px;
   height: 100%;
   background-image: url("../img/block1_bg.jpg"); }
-  .first-block-content__title {
-    font-family: "Playfair Display", serif;
-    color: #ffffff;
-    font-weight: normal;
-    font-size: 80px;
-    text-align: center;
-    text-transform: uppercase; }
-  .first-block-content__subtitle {
-    font-family: "Open Sans", sans-serif;
-    text-align: center;
-    font-weight: 300;
-    font-size: 20px;
-    color: #ffffff; }
+  .first-block-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    .first-block-content__title {
+      font-family: "Playfair Display", serif;
+      color: #ffffff;
+      font-weight: normal;
+      font-size: 80px;
+      text-align: center;
+      text-transform: uppercase; }
+    .first-block-content__subtitle {
+      padding-top: 50px;
+      font-family: "Open Sans", sans-serif;
+      text-align: center;
+      font-weight: 300;
+      font-size: 20px;
+      color: #ffffff; }
   .first-block-scroll {
     position: absolute;
     width: 26px;

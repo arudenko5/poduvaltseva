@@ -102,10 +102,15 @@
 
 /* block 1 */
 .first-block {
+  position: relative;
   padding-top: 80px;
   height: 100%;
   background-image: url('../img/block1_bg.jpg');
   &-content{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     &__title{
       font-family:$font_playfair;
       color: #ffffff;
@@ -115,6 +120,7 @@
       text-transform: uppercase;
     }
     &__subtitle{
+      padding-top: 50px;
       font-family:$font_opensans;
       text-align: center;
       font-weight: 300;
