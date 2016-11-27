@@ -283,3 +283,127 @@
     }
   }
 }
+
+.sixth-block{
+  height: 900px;
+  background-image: url('../img/block6_bg.jpg');
+}
+.team{
+  padding:90px 0 0;
+  &__title{
+    text-align: center;
+    font-family:$font_playfair;
+    font-weight: normal;
+    color: #FFFFFF;
+    font-size: 45px;
+  }
+  &__subtitle{
+    font-family:$font_opensans;
+    font-weight: 300;
+    color: $color__light-gray;
+    text-align: center;
+  }
+}
+.persons{
+  width: 800px;
+  margin: 0 auto;
+  &__item{
+    width: 33%;
+  }
+}
+.person{
+
+  &__pic-holder{
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+  }
+  &__pic{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%
+  }
+  &__name{
+    font-family:$font_playfair;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  &__bio{
+    font-family: $font_opensans;
+    color: $color__light-gray;
+    font-size: 14px;
+    font-weight: 300;
+    padding:0 7px;
+  }
+}
+.map{
+  height: 320px;
+  /*костылим*/
+  [class*="-ground-pane"]{
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+
+}
+
+.eighth{
+  height: 345px;
+  background-image: url('../img/footer_bg.jpg');
+}
+.contacts{
+  width: 640px;
+  margin: 0 auto;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  text-align: center;
+  color: #FFFFFF;
+  &__city{
+    font-size: 24px;
+    font-family:$font_opensans;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  &__phone-link{
+    font-family:$font_opensans;
+    font-size: 45px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &__person{
+    font-family:$font_opensans;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  &__mail-link{
+    font-family:$font_opensans;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &__social{
+    font-size: 30px;
+    &-link{
+      color: #FFFFFF;
+      text-decoration: none;
+      &:hover{
+        color: $color__light-gray;
+      }
+    }
+  }
+}

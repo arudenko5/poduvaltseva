@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/vendors.min.css">
     <meta name="viewport" content="width=device-width; initial-scale=1">
 </head>
@@ -132,7 +132,7 @@
                         </li>
                     </ul>
 
-                    <button class="button">Узнать цену</button>
+                    <button class="original-button">Узнать цену</button>
                 </article>
             </div>
         </section>
@@ -249,14 +249,6 @@
                     <p class="case__subinfo">Басманный районный суд<br>14 октября 2016</p>
                 </article>
             </section>
-            <section class="cases-controls">
-                <div class="cases-controls__prev cases-controls__control js-cases-prev">
-                    <i class="fa fa-angle-left" aria-hidden="true"></i>
-                </div>
-                <div class="cases-controls__next cases-controls__control js-cases-next">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </div>
-            </section>
         </section>
 
         <!-- sixth block -->
@@ -269,39 +261,37 @@
                     </p>
 
                     <ul class="persons cols">
-                        <li class="persons__item">
+                        <li class="persons__item col">
                             <article class="person">
-                                <div class="person__pic-holder"><img src="" alt="" class="person__pic"></div>
+                                <div class="person__pic-holder"><img src="./img/temp_photo.jpg" alt="" class="person__pic"></div>
                                 <p class="person__name">Аделина Подувальцева</p>
                                 <p class="person__bio">Ведущий юрист Cirque du Soleil. Стаж работы более 10 лет</p>
                             </article>
                         </li>
-                        <li class="persons__item">
+                        <li class="persons__item col">
                             <article class="person">
-                                <div class="person__pic-holder"><img src="" alt="" class="person__pic"></div>
+                                <div class="person__pic-holder"><img src="./img/temp_photo.jpg" alt="" class="person__pic"></div>
                                 <p class="person__name">Виктор Пастернак</p>
                                 <p class="person__bio">Опыт более 10 лет, ведущий юрист по вопросам интеллектуальной собственности и судебным делам,</p>
                             </article>
                         </li>
-                        <li class="persons__item">
+                        <li class="persons__item col">
                             <article class="person">
-                                <div class="person__pic-holder"><img src="" alt="" class="person__pic"></div>
+                                <div class="person__pic-holder"><img src="./img/temp_photo.jpg" alt="" class="person__pic"></div>
                                 <p class="person__name">Екатерина Проняшина</p>
                                 <p class="person__bio">Москва, опыт более 10 лет, ведущий юрист по договорному праву и судебным спорам.</p>
                             </article>
                         </li>
                     </ul>
 
-                    <button class="button">Написать нам</button>
+                    <button class="original-button">Написать нам</button>
                 </article>
             </div>
         </section>
 
         <!-- seventh block -->
         <section class="seventh-block h-page-block">
-            <div class="sixth-block__inner h-page-block__inner">
-                <div class="map" id="map"></div>
-            </div>
+            <div class="map" id="map"></div>
         </section>
 
         <!-- eighth block -->
@@ -313,10 +303,22 @@
                     <p class="contacts__phone"><a href="tel:" class="contacts__phone-link">+7 (926) 919 25 33</a></p>
                     <p class="contacts__person">аделина подувальцева</p>
                     <p class="contacts__mail"><a href="mailto:" class="contacts__mail-link">adelina@poduvaltseva.ru</a></p>
+                    <p class="contacts__social">
+                        <a href="#" class="contacts__social-link" target="_blank">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="contacts__social-link" target="_blank">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="contacts__social-link" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </p>
                 </article>
             </div>
         </section>
     </section>
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="js/vendors.min.js"></script>
     <script src="js/main.js"></script>
 </body>
