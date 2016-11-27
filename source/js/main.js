@@ -1,5 +1,14 @@
 /* Ебанем слайдер */
 (function(){
+    $(window).on("load", function(){
+        // var block_height = screen.height >= 768 ? document.documentElement.clientHeight: screen.height;
+        /*var block_height = window.innerHeight;
+        $(".js-first-block").css( {'height': block_height});
+        console.log(screen.height);
+        console.log(block_height)*/
+    });
+})();
+(function(){
     $(document).ready(function() {
 
         $(".letters-slider").owlCarousel({
@@ -33,8 +42,7 @@
 })();
 
 (function(){
-    $(document).ready(function() {
-        var $map = $("#map");
+
 
         ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
@@ -60,7 +68,6 @@
             myMap.behaviors.disable('scrollZoom');
             myMap.geoObjects.add(myPlacemark);
         });
-    });
 })();
 
 

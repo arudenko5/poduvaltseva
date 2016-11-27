@@ -44,16 +44,28 @@
   &__title{
     font-family:$font_opensans;
     font-weight: 300;
-    font-size: 22px;
-    letter-spacing: 3px;
     text-transform: uppercase;
+    @include break(lg) {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+    @include break(xl) {
+      font-size: 22px;
+      letter-spacing: 3px;
+    }
   }
   &__subtitle{
     font-family:$font_opensans;
     font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 18px;
     text-transform: uppercase;
+    @include break(lg) {
+      letter-spacing: 1px;
+      font-size: 16px;
+    }
+    @include break(xl) {
+      letter-spacing: 1px;
+      font-size: 18px;
+    }
   }
 }
 .header-nav{
@@ -61,11 +73,15 @@
     text-align: right;
   }
   &__item{
-    padding-left: 33px;
+    @include break(lg) {
+      padding-left: 22px;
+    }
+    @include break(xl) {
+      padding-left: 33px;
+    }
   }
   &__link{
     font-weight: 500;
-    font-size: 16px;
     line-height: $height__header;
     color: #ffffff;
     text-transform: uppercase;
@@ -74,6 +90,12 @@
       font-weight: 500;
       color: $color__gray;
       text-decoration: underline;
+    }
+    @include break(lg) {
+      font-size: 14px;
+    }
+    @include break(xl) {
+      font-size: 16px;
     }
   }
 }
@@ -119,9 +141,14 @@
   background-image: url('../img/block2_bg.jpg');
   height: 700px;
   &-content{
-    padding-left: 550px;
     padding-right: 40px;
     text-align: left;
+    @include break(lg) {
+      padding-left: 350px;
+    }
+    @include break(xl) {
+      padding-left: 550px;
+    }
     &__title{
       font-family:$font_playfair;
       text-transform: uppercase;
@@ -141,7 +168,7 @@
 }
 
 .third-block{
-  padding: 50px 0;
+  padding: 50px 0 20px;
 }
 .services{
   &__title{
@@ -154,12 +181,29 @@
 }
 .services-list{
   &__item{
+    padding-top: 80px;
     width: 50%;
     &:nth-of-type(even){
-      padding-left: 70px;
+      @include break(xs) {
+        padding-left: 40px;
+      }
+      @include break(lg) {
+        padding-left: 40px;
+      }
+      @include break(xl) {
+        padding-left: 70px;
+      }
     }
     &:nth-of-type(odd){
-      padding-right: 70px;
+      @include break(xs) {
+        padding-right: 40px;
+      }
+      @include break(lg) {
+        padding-right: 40px;
+      }
+      @include break(xl) {
+        padding-right: 70px;
+      }
     }
   }
 }
@@ -169,21 +213,54 @@
     text-align: left;
     font-weight: normal;
     font-family:$font_opensans;
+    @include break(xs) {
+
+    }
+    @include break(lg) {
+      font-size: 24px;
+    }
+    @include break(xl) {
+      font-size: 30px;
+    }
   }
   &__description{
-    font-size: 16px;
     color: $color__light-gray;
     text-align: left;
+    @include break(xs) {
+      font-size: 14px;
+    }
+    @include break(lg) {
+      font-size: 14px;
+    }
+    @include break(xl) {
+      font-size: 16px;
+    }
+  }
+  &__content{
+    vertical-align: top;
+    width: 80%;
+    @include break(xs) {
+      padding-left: 40px;
+    }
+    @include break(lg) {
+      padding-left: 25px;
+    }
+    @include break(xl) {
+      padding-left: 45px;
+    }
   }
   &__icon{
-    height: 110px;
-    width: 100px;
+    vertical-align: top;
+    width: 20%;
     float: left;
-    margin-right: 45px;
     svg{
-      max-height: 100%;
       max-width: 100%;
+      height: 110px;
     }
+  }
+  &__price{
+    text-align: left;
+    font-weight: bold;
   }
 }
 
@@ -220,26 +297,54 @@
   }
 }
 .case{
-  height: 450px;
-  padding:60px 45px 0;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  @include break(xs) {
+    height: 300px;
+    padding:40px 30px 0;
+  }
+  @include break(lg) {
+    height: 300px;
+    padding:40px 30px 0;
+  }
+  @include break(xl) {
+    height: 450px;
+    padding:60px 45px 0;
+  }
   &__title{
     font-family:$font_opensans;
-    font-size: 22px;
     font-weight: 500;
     color: #FFFFFF;
     text-align: left;
     padding-bottom: 5px;
     border-bottom: 3px solid #fff;
+    @include break(xs) {
+      font-size: 18px;
+    }
+    @include break(lg) {
+      font-size: 18px;
+    }
+    @include break(xl) {
+      font-size: 22px;
+    }
   }
   &__description{
     padding-top: 10px;
     font-family:$font_opensans;
     color: #FFFFFF;
-    font-size: 18px;
-    height: 240px;
+    @include break(xs) {
+      font-size: 18px;
+      height: 240px;
+    }
+    @include break(lg) {
+      font-size: 16px;
+      height: 140px;
+    }
+    @include break(xl) {
+      font-size: 18px;
+      height: 240px;
+    }
   }
   &__subinfo{
     font-family:$font_opensans;
@@ -247,6 +352,15 @@
     font-weight: 600;
     line-height: 1;
     font-size: 16px;
+    @include break(xs) {
+      font-size: 14px;
+    }
+    @include break(lg) {
+      font-size: 14px;
+    }
+    @include break(xl) {
+      font-size: 16px;
+    }
   }
 }
 .cases{
@@ -255,10 +369,8 @@
       div{
         position: absolute;
         top: 50%;
-        margin-top: -23px;
         background-color: #fff;
-        width: 45px;
-        height: 45px;
+
         z-index: 1;
         color: $color__dark-gray;
         text-align: center;
@@ -270,8 +382,33 @@
         }
         .fa{
           color: $color__light-gray;
-          font-size: 24px;
-          line-height: 45px;
+          @include break(xs) {
+            font-size: 16px;
+            line-height: 30px;
+          }
+          @include break(lg) {
+            font-size: 16px;
+            line-height: 30px;
+          }
+          @include break(xl) {
+            font-size: 24px;
+            line-height: 45px;
+          }
+        }
+        @include break(xs) {
+          margin-top: -15px;
+          width: 30px;
+          height: 30px;
+        }
+        @include break(lg) {
+          margin-top: -15px;
+          width: 30px;
+          height: 30px;
+        }
+        @include break(xl) {
+          margin-top: -23px;
+          width: 45px;
+          height: 45px;
         }
       }
     }
@@ -285,11 +422,11 @@
 }
 
 .sixth-block{
-  height: 900px;
+  height: 800px;
   background-image: url('../img/block6_bg.jpg');
 }
 .team{
-  padding:90px 0 0;
+  padding:40px 0 0;
   &__title{
     text-align: center;
     font-family:$font_playfair;
@@ -302,11 +439,23 @@
     font-weight: 300;
     color: $color__light-gray;
     text-align: center;
+    @include break(lg) {
+      padding: 45px 0 65px;
+    }
+    @include break(xl) {
+      padding: 45px 0 65px;
+    }
   }
 }
 .persons{
   width: 800px;
   margin: 0 auto;
+  @include break(lg) {
+    padding: 45px 0 65px;
+  }
+  @include break(xl) {
+    width: 900px;
+  }
   &__item{
     width: 33%;
   }
@@ -316,7 +465,12 @@
   &__pic-holder{
     width: 130px;
     height: 130px;
-    margin: 0 auto;
+    @include break(lg) {
+      margin: 0 auto 30px;
+    }
+    @include break(xl) {
+      margin: 0 auto 30px;
+    }
   }
   &__pic{
     width: 100%;
@@ -358,6 +512,15 @@
 .eighth{
   height: 345px;
   background-image: url('../img/footer_bg.jpg');
+  @include break(xs) {
+    padding: 70px 0 0;
+  }
+  @include break(lg) {
+    padding: 70px 0 0;
+  }
+  @include break(xl) {
+    padding: 70px 0 0;
+  }
 }
 .contacts{
   width: 640px;
@@ -398,6 +561,15 @@
   }
   &__social{
     font-size: 30px;
+    @include break(xs) {
+      padding:20px 0 10px;
+    }
+    @include break(lg) {
+      padding:20px 0 10px;
+    }
+    @include break(xl) {
+      padding:20px 0 10px;
+    }
     &-link{
       color: #FFFFFF;
       text-decoration: none;
