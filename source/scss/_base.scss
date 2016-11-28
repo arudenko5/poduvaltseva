@@ -77,4 +77,8 @@ button, input, textarea {
   &:hover{
     text-decoration: underline;
   }
+  &-holder{
+    padding: 30px 0;
+    text-align: center;
+  }
 }
