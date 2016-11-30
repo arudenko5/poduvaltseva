@@ -122,6 +122,9 @@ button, input, textarea {
   line-height: 1;
   font-weight: 900;
   font-family: "Playfair Display", serif; }
+  @media (min-width: 320px) {
+    .header-logo__symbol {
+      font-size: 30px; } }
   @media (min-width: 780px) {
     .header-logo__symbol {
       font-size: 40px; } }
@@ -137,6 +140,10 @@ button, input, textarea {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   text-transform: uppercase; }
+  @media (min-width: 320px) {
+    .header-logo__title {
+      font-size: 12px;
+      letter-spacing: 3px; } }
   @media (min-width: 780px) {
     .header-logo__title {
       font-size: 16px;
@@ -154,6 +161,9 @@ button, input, textarea {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   text-transform: uppercase; }
+  @media (min-width: 320px) {
+    .header-logo__subtitle {
+      font-size: 12px; } }
   @media (min-width: 780px) {
     .header-logo__subtitle {
       font-size: 14px; } }
@@ -169,33 +179,27 @@ button, input, textarea {
 .header-nav__burger-icon {
   text-align: right;
   font-size: 30px; }
-  @media (min-width: 480px) {
+  @media (min-width: 320px) {
     .header-nav__burger-icon {
-      line-height: 60px; } }
+      line-height: 60px;
+      display: block; } }
   @media (min-width: 780px) {
     .header-nav__burger-icon {
       line-height: 80px;
-      display: block; } }
-  @media (min-width: 1000px) {
-    .header-nav__burger-icon {
       display: none; } }
 
 .header-nav__inner {
   text-align: right; }
-  @media (min-width: 780px) {
+  @media (min-width: 480px) {
     .header-nav__inner {
       display: none; } }
-  @media (min-width: 1000px) {
+  @media (min-width: 780px) {
     .header-nav__inner {
       display: block; } }
 
 @media (min-width: 780px) {
   .header-nav__item {
     padding-left: 15px; } }
-
-@media (min-width: 1000px) {
-  .header-nav__item {
-    padding-left: 22px; } }
 
 @media (min-width: 1220px) {
   .header-nav__item {
@@ -213,7 +217,7 @@ button, input, textarea {
     text-decoration: underline; }
   @media (min-width: 780px) {
     .header-nav__link {
-      font-size: 14px; } }
+      font-size: 12px; } }
   @media (min-width: 1000px) {
     .header-nav__link {
       font-size: 14px; } }

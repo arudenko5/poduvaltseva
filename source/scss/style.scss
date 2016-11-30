@@ -41,6 +41,9 @@
     line-height: 1;
     font-weight: 900;
     font-family:$font_playfair;
+    @include break(xs) {
+      font-size: 30px;
+    }
     @include break(md) {
       font-size: 40px;
     }
@@ -51,11 +54,16 @@
   &__text{
     vertical-align: bottom;
     padding-left: 7px;
+
   }
   &__title{
     font-family:$font_opensans;
     font-weight: 300;
     text-transform: uppercase;
+    @include break(xs) {
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
     @include break(md) {
       font-size: 16px;
       letter-spacing: 2px;
@@ -73,6 +81,9 @@
     font-family:$font_opensans;
     font-weight: 600;
     text-transform: uppercase;
+    @include break(xs) {
+      font-size: 12px;
+    }
     @include break(md) {
       font-size: 14px;
     }
@@ -90,32 +101,27 @@
   &__burger-icon{
     text-align: right;
     font-size: 30px;
-    @include break(sm) {
+    @include break(xs) {
       line-height: 60px;
+      display: block;
     }
     @include break(md) {
       line-height: 80px;
-      display: block;
-    }
-    @include break(lg) {
       display: none;
     }
   }
   &__inner{
     text-align: right;
-    @include break(md) {
+    @include break(sm) {
       display: none;
     }
-    @include break(lg) {
+    @include break(md) {
       display: block;
     }
   }
   &__item{
     @include break(md) {
       padding-left: 15px;
-    }
-    @include break(lg) {
-      padding-left: 22px;
     }
     @include break(xl) {
       padding-left: 33px;
@@ -133,7 +139,7 @@
       text-decoration: underline;
     }
     @include break(md) {
-      font-size: 14px;
+      font-size: 12px;
     }
     @include break(lg) {
       font-size: 14px;
