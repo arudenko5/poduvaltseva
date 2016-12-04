@@ -16,15 +16,27 @@
     height: 80px;
   }
   &__inner{
+    z-index: 5;
     @extend .h-page-block__inner
   }
   &__logo{
      width: 50%;
     text-align: left;
     padding: 15px 0;
+    @include break(xs) {
+      width: 90%;
+    }
+    @include break(md) {
+      width: 50%;
+    }
   }
   &__menu{
-    width: 50%;
+    @include break(xs) {
+      width: auto;
+    }
+    @include break(md) {
+      width: 50%;
+    }
   }
 }
 .header-logo{
@@ -42,9 +54,14 @@
     font-weight: 900;
     font-family:$font_playfair;
     @include break(xs) {
-      font-size: 30px;
+      display: inline-block;
+      font-size: 35px;
+    }
+    @include break(sm) {
+      display: none;
     }
     @include break(md) {
+      display: inline-block;
       font-size: 40px;
     }
     @include break(lg) {
@@ -54,7 +71,17 @@
   &__text{
     vertical-align: bottom;
     padding-left: 7px;
+    @include break(xs) {
+      display: none;
+    }
+    @include break(sm) {
+      display: inline-block;
+      line-height: 1;
+    }
 
+    @include break(lg) {
+      line-height: normal;
+    }
   }
   &__title{
     font-family:$font_opensans;
@@ -99,6 +126,7 @@
 }
 .header-nav{
   &__burger-icon{
+    cursor: pointer;
     text-align: right;
     font-size: 30px;
     @include break(xs) {
@@ -112,7 +140,7 @@
   }
   &__inner{
     text-align: right;
-    @include break(sm) {
+    @include break(xs) {
       display: none;
     }
     @include break(md) {
@@ -176,6 +204,9 @@
       font-weight: normal;
       text-align: center;
       text-transform: uppercase;
+      @include break(xs) {
+        font-size: 45px;
+      }
       @include break(md) {
         font-size: 60px;
       }
@@ -192,6 +223,10 @@
       font-weight: 300;
       font-size: 20px;
       color: #ffffff;
+      @include break(xs) {
+        padding-top: 15px;
+        font-size: 14px;
+      }
       @include break(md) {
         padding-top: 30px;
         font-size: 16px;
@@ -209,6 +244,9 @@
 
     left: 50%;
     margin-left: -13px;
+    @include break(xs) {
+      bottom: 20px;
+    }
     @include break(md) {
       bottom: 60px;
     }
@@ -224,19 +262,29 @@
 
 .second-block{
   background-image: url('../img/block2_bg.jpg');
+  @include break(xs) {
+    height: auto;
+    padding: 20px 0;
+  }
   @include break(md) {
-    height: 500px;
-    padding-top: 70px;
+    min-height: 500px;
+    padding-top: 60px;
   }
   @include break(lg) {
-    padding-top: 150px;
+    padding-top: 90px;
     height: 700px;
   }
   &-content{
-    padding-right: 40px;
     text-align: left;
+    @include break(xs) {
+      padding: 0 12px;
+    }
+    @include break(sm) {
+      padding-right: 0;
+      padding-left: 35%;
+    }
     @include break(md) {
-      padding-left: 30%;
+      padding-right: 40px;
     }
     @include break(lg) {
       padding-left: 350px;
@@ -249,12 +297,19 @@
       text-transform: uppercase;
       font-weight: normal;
       color: #000;
+      @include break(xs) {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      @include break(sm) {
+        font-size: 24px;
+      }
       @include break(md) {
         font-size: 32px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
       @include break(lg) {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         font-size: 40px;
       }
     }
@@ -262,9 +317,13 @@
       font-family:$font_opensans;
       font-weight: normal;
       color: $color__dark-gray;
-      margin-bottom: 30px;
+      @include break(xs) {
+        font-size: 12px;
+        margin-bottom: 14px;
+      }
       @include break(md) {
         font-size: 14px;
+        margin-bottom: 20px;
       }
       @include break(lg) {
         font-size: 16px;
@@ -278,27 +337,40 @@
 }
 .services{
   &__title{
-    font-size: 45px;
     font-weight: normal;
     font-family:$font_playfair;
     color: #000;
     text-align: center;
+    @include break(xs) {
+      font-size: 28px;
+      padding-bottom: 30px;
+    }
+    @include break(md) {
+      font-size: 45px;
+      padding-bottom: 0;
+    }
   }
 }
 .services-list{
   &__item{
-    width: 50%;
+    @include break(xs) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
     @include break(md) {
+      width: 50%;
       padding-top: 45px;
+      margin-bottom: 0;
     }
     @include break(lg) {
       padding-top: 80px;
     }
     &:nth-of-type(even){
-      @include break(xs) {
-        padding-left: 40px;
+      @include break(sm) {
+        padding-right: 40px;
       }
       @include break(lg) {
+        padding-right: 0;
         padding-left: 40px;
       }
       @include break(xl) {
@@ -306,7 +378,7 @@
       }
     }
     &:nth-of-type(odd){
-      @include break(xs) {
+      @include break(sm) {
         padding-right: 40px;
       }
       @include break(lg) {
@@ -321,13 +393,16 @@
 .service{
   &__title{
     text-align: left;
-    font-weight: normal;
+    line-height: 1;
     font-family:$font_opensans;
     @include break(md) {
       font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 20px;
     }
     @include break(lg) {
       font-size: 24px;
+      font-weight: normal;
     }
     @include break(xl) {
       font-size: 30px;
@@ -337,9 +412,9 @@
     color: $color__light-gray;
     text-align: left;
     @include break(xs) {
-      font-size: 14px;
+      font-size: 12px;
     }
-    @include break(lg) {
+    @include break(sm) {
       font-size: 14px;
     }
     @include break(xl) {
@@ -350,9 +425,11 @@
     vertical-align: top;
     width: 80%;
     @include break(xs) {
-      padding-left: 25px;
+      padding-left: 0;
+      width: 100%;
     }
-    @include break(lg) {
+    @include break(sm) {
+      width: 80%;
       padding-left: 25px;
     }
     @include break(xl) {
@@ -363,20 +440,32 @@
     vertical-align: top;
     width: 20%;
     float: left;
+    @include break(xs) {
+      width: 0;
+      display: none;
+    }
+    @include break(sm) {
+      display: inline-block;
+      width: 20%;
+    }
     svg{
       max-width: 100%;
-      height: 110px;
       @include break(xs) {
         height: 80px;
       }
       @include break(lg) {
-        height: 110px;
+        /*height: 110px;*/
       }
     }
   }
   &__price{
     text-align: left;
-    font-weight: bold;
+    @include break(xs) {
+      font-weight: normal;
+    }
+    @include break(lg) {
+      font-weight: bold;
+    }
   }
 }
 
@@ -385,11 +474,16 @@
 }
 .letters{
   &__title{
-    font-size: 45px;
     font-weight: normal;
     font-family:$font_playfair;
     color: #000;
     text-align: center;
+    @include break(xs) {
+      font-size: 28px;
+    }
+    @include break(md) {
+      font-size: 45px;
+    }
   }
   &-slider{
     padding:45px 0;
@@ -416,7 +510,10 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  @include break(md) {
+  @include break(sm) {
+
+  }
+  @include break(xs) {
     height: 200px;
     padding:20px 30px 0;
   }
@@ -434,7 +531,7 @@
     color: #FFFFFF;
     text-align: left;
     padding-bottom: 5px;
-    @include break(md) {
+    @include break(xs) {
       font-size: 14px;
       border-bottom: 2px solid #fff;
     }
@@ -450,7 +547,7 @@
     padding-top: 10px;
     font-family:$font_opensans;
     color: #FFFFFF;
-    @include break(md) {
+    @include break(xs) {
       font-size: 14px;
       height: auto;
     }
@@ -469,8 +566,8 @@
     font-weight: 600;
     line-height: 1;
     font-size: 16px;
-    @include break(md) {
-      display: none;;
+    @include break(xs) {
+      display: none;
     }
     @include break(lg) {
       font-size: 14px;
@@ -553,17 +650,29 @@
     font-family:$font_playfair;
     font-weight: normal;
     color: #FFFFFF;
-    font-size: 45px;
+    @include break(xs) {
+      font-size: 28px;
+    }
+    @include break(lg) {
+      font-size: 45px;
+    }
   }
   &__subtitle{
     font-family:$font_opensans;
     font-weight: 300;
     color: $color__light-gray;
     text-align: center;
+    margin: 0 auto;
+    @include break(xs) {
+      font-size: 14px;
+      padding: 25px 0 35px;
+    }
     @include break(md) {
+      font-size: 16px;
       padding: 25px 0 35px;
     }
     @include break(lg) {
+      max-width: 75%;
       padding: 45px 0 45px;
     }
     @include break(xl) {
@@ -572,24 +681,44 @@
   }
 }
 .persons{
-  width: 800px;
   margin: 0 auto;
-  @include break(lg) {
+  @include break(sm) {
+    width: 100%;
+    padding: 45px 0 65px 0;
+  }
+  @include break(md) {
+    width: 100%;
     padding: 45px 0 65px;
   }
   @include break(xl) {
-    width: 900px;
+    width: 800px;
   }
   &__item{
     width: 33%;
+    @include break(xs) {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+    @include break(md) {
+      width: 33%;
+    }
   }
 }
 .person{
 
   &__pic-holder{
-    width: 90px;
-    height: 90px;
+    @include break(xs) {
+      float: left;
+      margin-right: 20px;
+      width: 70px;
+      height: 70px;
+    }
+    @include break(sm){
+      width: 90px;
+      height: 90px;
+    }
     @include break(md) {
+      float: none;
       margin: 0 auto 20px;
     }
     @include break(lg) {
@@ -606,11 +735,20 @@
   }
   &__name{
     font-family:$font_playfair;
-    text-align: center;
     color: #FFFFFF;
-    margin-bottom: 20px;
+    @include break(xs) {
+      text-align: left;
+      margin-bottom: 7px;
+      padding-left: 85px;
+    }
+    @include break(sm) {
+      padding-left: 110px;
+    }
     @include break(md) {
+      padding-left: 0;
+      text-align: center;
       font-size: 20px;
+      margin-bottom: 20px;
     }
     @include break(lg) {
       font-size: 22px;
@@ -621,11 +759,29 @@
     color: $color__light-gray;
     font-size: 14px;
     font-weight: 300;
-    padding:0 7px;
+    padding:0 0 0 110px;
+    @include break(xs) {
+      text-align: left;
+      padding-left: 85px;
+    }
+
+    @include break(sm) {
+      padding-left: 110px;
+    }
+    @include break(md) {
+      text-align: center;
+      padding-left: 0;
+    }
   }
 }
 .map{
   height: 320px;
+  @include break(xs) {
+    display: none;
+  }
+  @include break(md) {
+    display: block;
+  }
   /*костылим*/
   [class*="-ground-pane"]{
     filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0'/></filter></svg>#grayscale");
@@ -655,12 +811,18 @@
   }
 }
 .contacts{
-  width: 640px;
   margin: 0 auto;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
   text-align: center;
   color: #FFFFFF;
+  @include break(xs) {
+    width: 100%;
+    border: none;
+  }
+  @include break(md) {
+    width: 640px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+  }
   &__city{
     font-size: 24px;
     font-family:$font_opensans;
@@ -669,10 +831,15 @@
   }
   &__phone-link{
     font-family:$font_opensans;
-    font-size: 45px;
-    font-weight: 700;
     color: #FFFFFF;
     text-decoration: none;
+    @include break(xs) {
+      font-weight: 700;
+      font-size: 30px;
+    }
+    @include break(md) {
+      font-size: 45px;
+    }
     &:hover{
       text-decoration: underline;
     }
@@ -681,6 +848,12 @@
     font-family:$font_opensans;
     font-size: 24px;
     text-transform: uppercase;
+    @include break(xs) {
+      font-size: 16px;
+    }
+    @include break(md) {
+      font-size: 24px;
+    }
   }
   &__mail-link{
     font-family:$font_opensans;
@@ -708,6 +881,54 @@
       &:hover{
         color: $color__light-gray;
       }
+    }
+  }
+}
+
+.mobile-nav{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 1;
+  padding: 0;
+  background: #000;
+  transition: all 0.5s ease;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, -150%);
+  &.shown{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+  }
+  @include break(xs) {
+    display: block;
+  }
+  @include break(md) {
+    display: none;
+  }
+  &__item{
+    width: 100%;
+    text-align: center;
+    padding: 0 50px;
+
+    border-bottom: 1px solid $color__light-gray;
+    &:last-of-type{
+      background: none;
+    }
+  }
+  &__link{
+    color: #FFFFFF;
+    display: inline-block;
+    width: 100%;
+    padding:15px 0;
+    font-weight: 300;
+    text-decoration: none;
+    &:hover, &:active{
+      color: #FFFFFF;
+      text-decoration: underline;
     }
   }
 }

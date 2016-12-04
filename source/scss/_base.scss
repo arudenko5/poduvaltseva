@@ -12,6 +12,7 @@ body {
 }
 
 body {
+    min-width: $width__min;
     font-family: $font_opensans;
     background-color: #fff;
 }
@@ -44,7 +45,6 @@ button, input, textarea {
       position: relative;
       &__inner{
         margin: 0 auto;
-        border: 1px solid black;
         @include break(xs) {
           width: 85%;
         }

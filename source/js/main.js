@@ -16,8 +16,20 @@
             autoPlay: 3000, //Set AutoPlay to 3 seconds
 
             items : 4,
-            itemsDesktop : [1199,3],
-            itemsDesktopSmall : [979,3]
+                responsive : {
+                    // breakpoint from 0 up
+                    0 : {
+                        items : 1,
+
+                    },
+                    480 : {
+                        items : 2,
+
+                    },
+                    780 : {
+                        items : 4,
+                    }
+                }
 
         });
 
@@ -35,7 +47,20 @@
             loop: true,
             nav: true,
             navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-            dots: false
+            dots: false,
+            responsive : {
+                // breakpoint from 0 up
+                0 : {
+                    items : 1,
+
+                },
+                480 : {
+                    items : 2,
+                },
+                780 : {
+                    items : 3,
+                }
+            }
         });
 
     });
@@ -70,4 +95,45 @@
         });
 })();
 
+(function(){
+    $(document).ready(function(){
+        var menu_height = $('.js-header').height();
+        $('.js-nav-link').click( function( e ){
+            var scroll_el = $(this).data('href');
+
+            if ($(scroll_el).length != 0) {
+                $('html, body').animate({ scrollTop: $(scroll_el).offset().top - menu_height }, 500);
+            }
+
+            if($(e.target).hasClass('mobile-nav__link') && $('.js-mobile-nav').hasClass('shown')){
+                $('.js-mobile-nav').removeClass('shown');
+            }
+            return false;
+        });
+    });
+})();
+
+(function(){
+    $(document).ready(function(){
+        $(".letter__link").fancybox({
+            helpers: {
+                title : {
+                    type : 'float'
+                },
+                overlay: {
+                    locked: false
+                }
+
+            }
+        });
+    });
+})();
+
+(function(){
+    $(document).ready(function(){
+        $('.js-burger').on('click', function(){
+            $('.js-mobile-nav').toggleClass('shown');
+        });
+    });
+})();
 

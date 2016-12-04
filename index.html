@@ -5,7 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/vendors.min.css">
-    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <meta name="viewport" content="width=device-width; initial-scale=1, user-scalable=no">
 </head>
 <body>
 <div class="secret-svg">
@@ -13,11 +13,11 @@
 </div>
     <section class="page-wrapper">
         <!-- HEADER -->
-        <header class="page-header">
+        <header class="page-header js-header">
             <div class="page-header__inner cols">
                 <div class="page-header__logo col">
                     <div class="header-logo">
-                        <a href="#" class="header-logo__link cols">
+                        <a href="/" class="header-logo__link cols">
                             <p class="header-logo__symbol col">&#197;</p>
                             <p class="header-logo__text col">
                                 <span class="header-logo__title">юридическое бюро</span><br/>
@@ -28,34 +28,52 @@
                 </div>
                 <div class="page-header__menu col">
                     <nav class="header-nav">
-                        <div class="header-nav__burger-icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        <div class="header-nav__burger-icon js-burger"><i class="fa fa-bars" aria-hidden="true"></i></div>
                         <ul class="header-nav__inner cols">
                             <li class="header-nav__item col">
-                                <a href="#" class="header-nav__link">О нас</a>
+                                <a data-href="#about_us" class="header-nav__link js-nav-link">О нас</a>
                             </li>
                             <li class="header-nav__item col">
-                                <a href="#" class="header-nav__link">Услуги</a>
+                                <a data-href="#services" class="header-nav__link js-nav-link">Услуги</a>
                             </li>
                             <li class="header-nav__item col">
-                                <a href="#" class="header-nav__link">Дела</a>
+                                <a data-href="#cases" class="header-nav__link js-nav-link">Дела</a>
                             </li>
                             <li class="header-nav__item col">
-                                <a href="#" class="header-nav__link">Команда</a>
+                                <a data-href="#team" class="header-nav__link js-nav-link">Команда</a>
                             </li>
                             <li class="header-nav__item col">
-                                <a href="#" class="header-nav__link">Команда</a>
+                                <a data-href="#contacts" class="header-nav__link js-nav-link">Контакты</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
+
+            <ul class="mobile-nav js-mobile-nav">
+                <li class="mobile-nav__item ">
+                    <a data-href="#about_us" href="#" class="mobile-nav__link js-nav-link">О нас</a>
+                </li>
+                <li class="mobile-nav__item ">
+                    <a data-href="#services" href="#" class="mobile-nav__link js-nav-link">Услуги</a>
+                </li>
+                <li class="mobile-nav__item ">
+                    <a data-href="#cases" href="#" class="mobile-nav__link js-nav-link">Дела</a>
+                </li>
+                <li class="mobile-nav__item ">
+                    <a data-href="#team" href="#" class="mobile-nav__link js-nav-link">Команда</a>
+                </li>
+                <li class="mobile-nav__item ">
+                    <a data-href="#contacts" href="#" class="mobile-nav__link js-nav-link">Контакты</a>
+                </li>
+            </ul>
         </header>
 
         <!-- first block -->
         <section class="first-block h-page-block js-first-block">
             <article class="first-block-content" >
-                <h2 class="first-block-content__title">МЫ знаем<br/>как вам помочь</h2>
-                <p class="first-block-content__subtitle">Юридическое сопровождение сделок<br/>Консльтации в области интеллектуальной собственности</p>
+                <h2 class="first-block-content__title">Всегда<br/>на вашей стороне</h2>
+                <p class="first-block-content__subtitle">Юридические услуги бизнесу и частным лицам<br/>Суды, договоры, консультации, интеллектуальная собственность</p>
             </article>
             <div class="first-block-scroll">
                 <svg><use xlink:href='#scroll'></use></svg>
@@ -63,19 +81,23 @@
         </section>
 
         <!-- second block -->
-        <section class="second-block h-page-block">
+        <section class="second-block h-page-block" id="about_us">
             <div class="second-block__inner h-page-block__inner">
                     <article class="second-block-content">
                         <h2 class="second-block-content__title">Всегда на вашей стороне</h2>
-                        <p class="second-block-content__text">Наша миссия – это особенный подход к каждому клиенту. Мы хотим быть прозрачными и понятными, мы хотим доносить до клиента все за и против, мы стремимся работать так, чтобы нам доверяли.</p>
-                        <p class="second-block-content__text">Aliquam sagittis neque in lectus semper, nec elementum arcu scelerisque. Curabitur ullamcorper auctor mauris, placerat fermentum.  Curabitur ullamcorper auctor mauris, placerat fermentum.</p>
-                        <p class="second-block-content__text">Aliquam sagittis neque in lectus semper, nec elementum arcu scelerisque. Curabitur ullamcorper auctor mauris, placerat fermentum.  Curabitur ullamcorper auctor mauris, placerat fermentum.</p>
+                        <p class="second-block-content__text">Меня зовут Аделина Подувальцева, я &mdash; юрист с профессиональным стажем более 10 лет.</p>
+                        <p class="second-block-content__text">Свой опыт я приобрела работая в крупнейших российских и иностранных компаниях (Cirque du Soleil, ABBYY, Люксор, Татнефть), государственных органах (Арбитражный суд г. Москвы), а также занимаясь частной практикой.</p>
+                        <p class="second-block-content__text">Миссия созданного мною юридического бюро – это симбиоз профессиональности и современности юридических услуг, их прозрачность и эффективность, индивидуальный подход к клиенту с глубоким погружением и тщательной проработкой поставленной задачи.</p>
+                        <p class="second-block-content__text">Уверена, что репутация дороже денег, поэтому с клиентом необходимо выстраивать в первую очередь честные профессиональные отношения.</p>
+                        <p class="second-block-content__text">Мы работаем как с бизнесом, так и физическими лицами.</p>
+
+                        <p class="second-block-content__text">Вы можете обратится с любыми уточняющими вопросами к нам по телефону, указанному на сайте, или через форму обратной связи.</p>
                     </article>
             </div>
         </section>
 
         <!-- third block -->
-        <section class="third-block h-page-block">
+        <section class="third-block h-page-block" id="services">
             <div class="third-block__inner h-page-block__inner">
                 <article class="services">
                     <h2 class="services__title">Наши услуги</h2>
@@ -88,9 +110,9 @@
                                     </svg>
                                 </div>
                                 <div class="service__content col">
-                                    <h4 class="service__title">Сопровождение сделок</h4>
-                                <p class="service__description">Aliquam sagittis neque in lectus semper, nec elementum arcu scelerisque. Curabitur ullamcorper auctor mauris, placerat fermentum.</p>
-                                <p class="service__price">от 14 000 руб</p>
+                                    <h4 class="service__title">Договоры</h4>
+                                <p class="service__description">Составим, проверим, проконсультируем.</p>
+                                <p class="service__price">от 5 000 руб</p>
                                 </div>
                             </article>
                         </li>
@@ -102,9 +124,9 @@
                                     </svg>
                                 </div>
                                 <div class="service__content col">
-                                    <h4 class="service__title">Арбитраж</h4>
-                                <p class="service__description">Aliquam sagittis neque in lectus semper, nec elementum arcu scelerisque. Curabitur ullamcorper auctor mauris, placerat fermentum.</p>
-                                <p class="service__price">от 6 000 руб</p>
+                                    <h4 class="service__title">Судебные процессы</h4>
+                                <p class="service__description">Арбитраж, суды общей юрисдикции, коммерческие и гражданские споры.</p>
+                                <p class="service__price">от 100 000 руб</p>
                                 </div>
                             </article>
                         </li>
@@ -116,9 +138,9 @@
                                     </svg>
                                 </div>
                                 <div class="service__content col">
-                                    <h4 class="service__title">Интеллектуальное право</h4>
-                                <p class="service__description">Aliquam sagittis neque in lectus semper, nec elementum arcu scelerisque. Curabitur ullamcorper auctor mauris, placerat fermentum.</p>
-                                <p class="service__price">от 6 000 руб</p>
+                                    <h4 class="service__title">Интеллектуальная собственность</h4>
+                                <p class="service__description">Оформление и защита авторских прав. </p>
+                                <p class="service__price">Цена по запросу.</p>
                                 </div>
                             </article>
                         </li>
@@ -130,15 +152,15 @@
                                     </svg>
                                 </div>
                                 <div class="service__content col">
-                                    <h4 class="service__title">Интеллектуальное право</h4>
-                                <p class="service__description">Aliquam sagittis neque in lectus semper, nec elementum arcu scelerisque. Curabitur ullamcorper auctor mauris, placerat fermentum.</p>
-                                <p class="service__price">от 6 000 руб</p>
+                                    <h4 class="service__title">Консультации</h4>
+                                <p class="service__description">Письменно или устно, при встрече или онлайн. </p>
+                                <p class="service__price">от 2 000 руб</p>
                                 </div>
                             </article>
                         </li>
                     </ul>
                     <div class="original-button-holder">
-                        <button class="original-button">Узнать цену</button>
+                        <button class="original-button js-nav-link" data-href="#contacts">Узнать цену</button>
                     </div>
 
                 </article>
@@ -151,63 +173,63 @@
                 <h2 class="letters__title">Рекомендации клиентов</h2>
                 <section class="letters-slider owl-carousel">
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
 
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
                     <article class="letter">
-                        <a href="#" class="letter__link">
+                        <a href="http://perevozki24.ru/images/big_7.jpg" class="letter__link">
                             <img src="http://perevozki24.ru/images/big_7.jpg" alt="" class="letter__pic">
                         </a>
                     </article>
@@ -217,7 +239,7 @@
         </section>
 
         <!-- fifth block -->
-        <section class="fifth-block h-page-block">
+        <section class="fifth-block h-page-block" id="cases">
             <section class="cases owl-carousel">
                 <article class="case" style="background-image: url('./img/case_1.jpg');">
                     <h4 class="case__title">Дело 33-12918142/2016</h4>
@@ -260,12 +282,11 @@
         </section>
 
         <!-- sixth block -->
-        <section class="sixth-block h-page-block">
+        <section class="sixth-block h-page-block" id="team">
             <div class="sixth-block__inner h-page-block__inner">
                 <article class="team">
                     <h2 class="team__title">Команда</h2>
-                    <p class="team__subtitle">Наша команда обладает компетенциями в широкой области юридических вопросов.
-                        <br>Мы оказываем услуги по всей стране — от Москвы и Петербурга <br>до Владивостока и Хабаровска
+                    <p class="team__subtitle">Наша команда состоит из опытных профессионалов в различных сферах права, включая судебные споры, интеллектуальную собственность, договоры, сопровождение деятельности бизнеса и решение широкого спектра вопросов частных лиц
                     </p>
 
                     <ul class="persons cols">
@@ -273,26 +294,26 @@
                             <article class="person">
                                 <div class="person__pic-holder"><img src="./img/temp_photo.jpg" alt="" class="person__pic"></div>
                                 <p class="person__name">Аделина Подувальцева</p>
-                                <p class="person__bio">Ведущий юрист Cirque du Soleil. Стаж работы более 10 лет</p>
+                                <p class="person__bio">Москва, опыт более 10 лет, сопровождение бизнеса, авторское право, судебные споры, договорное право.</p>
                             </article>
                         </li>
                         <li class="persons__item col">
                             <article class="person">
                                 <div class="person__pic-holder"><img src="./img/temp_photo.jpg" alt="" class="person__pic"></div>
                                 <p class="person__name">Виктор Пастернак</p>
-                                <p class="person__bio">Опыт более 10 лет, ведущий юрист по вопросам интеллектуальной собственности и судебным делам,</p>
+                                <p class="person__bio">Москва, опыт более 10 лет, интеллектуальная собственность и коммерческое право.</p>
                             </article>
                         </li>
                         <li class="persons__item col">
                             <article class="person">
                                 <div class="person__pic-holder"><img src="./img/temp_photo.jpg" alt="" class="person__pic"></div>
                                 <p class="person__name">Екатерина Проняшина</p>
-                                <p class="person__bio">Москва, опыт более 10 лет, ведущий юрист по договорному праву и судебным спорам.</p>
+                                <p class="person__bio">Москва, опыт более 10 лет, договорное право и судебные споры.</p>
                             </article>
                         </li>
                     </ul>
                     <div class="original-button-holder">
-                        <button class="original-button">Написать нам</button>
+                        <button class="original-button js-nav-link" data-href="#contacts">Написать нам</button>
                     </div>
                 </article>
             </div>
@@ -305,7 +326,7 @@
 
         <!-- eighth block -->
 
-        <section class="eighth h-page-block">
+        <section class="eighth h-page-block" id="contacts">
             <div class="eighth-block__inner h-page-block__inner">
                 <article class="contacts">
                     <p class="contacts__city">москва</p>

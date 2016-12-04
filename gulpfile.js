@@ -43,7 +43,8 @@ var pathes = {
         styles: './css/',
         svg: './svg/',
         js: './js/',
-        fonts: './fonts/'
+        fonts: './fonts/',
+        pics: './img/'
     },
     watch: {
         html: './index.html',
@@ -123,6 +124,10 @@ gulp.task('bower', function(){
         '**/*.woff',
         '**/*.woff2'
     ],{restore: true});
+    var picsFilter = gulpFilter([
+        '**/*.gif',
+        '**/*.png'
+    ],{restore: true});
 
     return gulp.src(mainBowerFiles())
         .pipe(jsFilter)
@@ -138,6 +143,9 @@ gulp.task('bower', function(){
         .pipe(fontsFilter)
         .pipe(gulp.dest(pathes.build.fonts))
         .pipe(fontsFilter.restore)
+        .pipe(picsFilter)
+        .pipe(gulp.dest(pathes.build.pics))
+        .pipe(picsFilter.restore)
 });
 
 gulp.task('build', ['buildStyles', 'buildSvg', 'buildScripts', 'bower']);
