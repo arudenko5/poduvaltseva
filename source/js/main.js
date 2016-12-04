@@ -14,6 +14,7 @@
         $(".letters-slider").owlCarousel({
 
             autoPlay: 3000, //Set AutoPlay to 3 seconds
+            loop: true,
 
             items : 4,
                 responsive : {
