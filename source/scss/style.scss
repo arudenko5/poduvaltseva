@@ -265,10 +265,12 @@
   @include break(xs) {
     height: auto;
     padding: 20px 0;
+    background-position: 100% 50%;
   }
   @include break(md) {
     min-height: 500px;
     padding-top: 60px;
+    background-position: 50% 50%;
   }
   @include break(lg) {
     padding-top: 90px;
