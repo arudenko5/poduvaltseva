@@ -58,7 +58,6 @@
       font-size: 35px;
     }
     @include break(sm) {
-      display: none;
     }
     @include break(md) {
       display: inline-block;
@@ -72,11 +71,10 @@
     vertical-align: bottom;
     padding-left: 7px;
     @include break(xs) {
-      display: none;
+      line-height: 1;
     }
     @include break(sm) {
       display: inline-block;
-      line-height: 1;
     }
 
     @include break(lg) {
@@ -571,6 +569,9 @@
     font-size: 16px;
     @include break(xs) {
       display: none;
+    }
+    @include break(md) {
+      display: block;
     }
     @include break(lg) {
       font-size: 14px;

@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "admin"
+AuthUserFile /home/users/a/adelispo/domains/poduvaltseva.ru/.htpasswd
+Require valid-user
